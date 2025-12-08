@@ -1,4 +1,7 @@
 class MyClass{
+    void display(){
+        System.out.println("Hello from MyClass in Root package");
+    }
     @Override
     protected void finalize() throws Throwable {
         System.out.println("Finalize() executed before object deletion");
