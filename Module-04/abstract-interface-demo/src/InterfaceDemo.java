@@ -3,7 +3,6 @@ interface Shape{
     default void defaultMethod(){ // Concrete method
         System.out.println("Default method implementation in interface");
     }
-    void area();
 }
 
 class Circle implements  Shape{
