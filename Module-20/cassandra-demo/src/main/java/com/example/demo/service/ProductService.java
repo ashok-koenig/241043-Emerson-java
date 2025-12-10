@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class ProductService {
@@ -19,5 +20,14 @@ public class ProductService {
 
     public List<Product> getAllProducts(){
         return productRepository.findAll();
+    }
+
+    public Product getProductById(UUID id){
+        return productRepository.findById(id).orElseThrow();
+    }
+
+    public String deleteProduct(UUID id){
+        productRepository.deleteById(id);
+        return "Product deleted";
     }
 }
