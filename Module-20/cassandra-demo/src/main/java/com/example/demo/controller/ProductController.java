@@ -41,4 +41,14 @@ public class ProductController {
         productService.getProductById(id);
         return productService.deleteProduct(id);
     }
+
+    @GetMapping("/name")
+    public List<Product> productsByName(@RequestParam String name){
+        return productService.getProductByName(name);
+    }
+
+    @GetMapping("/name-price")
+    public List<Product> productByNameAndPrice(@RequestParam String name, @RequestParam double price){
+        return productService.getProductsByNameAndPrice(name, price);
+    }
 }

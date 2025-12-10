@@ -30,4 +30,12 @@ public class ProductService {
         productRepository.deleteById(id);
         return "Product deleted";
     }
+
+    public List<Product> getProductByName(String name){
+        return productRepository.findByName(name);
+    }
+
+    public List<Product> getProductsByNameAndPrice(String name, double price){
+        return productRepository.findByNameAndPrice(name, price);
+    }
 }
