@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variables</title>
+</head>
+<body>
+    <h1>Working with JavaScript Variables</h1>
+    <!-- <script src="my-script.js"></script> -->
+    <script>
+        // Global variable
+        let message2 = "Welcome to JavaScript";
+        // alert("Message: "+ message2)
+        console.log("Message: "+ message2)
+        // block
+        {
+            // local variable
+            let age = 25;
+            // alert("Age:"+ age)
+            console.log("Age: "+ age)
+            age = 26;
+            console.log("Updated Age: "+ age)
+            const email = "john@email.com"
+            console.log("Email: "+ email)
+            // email = "peter@email.com" // not possible, email is const
+        }
+       
+         console.log("Message: "+ message2)
+        //   console.log("Age:"+ age) // not possible to access, age is a block /local variable
+    </script>
+</body>
+</html>

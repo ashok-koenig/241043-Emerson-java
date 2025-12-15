@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object with for..in loop demo</title>
+</head>
+<body>
+    <h1>Object with form..in loop demo</h1>
+    <script>
+        const person = {name: "John", age: 26, email: "john@email.com"}
+        console.log(person)
+        console.log("Name: "+ person.name)
+        console.log("Name: "+ person["name"])
+        for (const key in person) {
+            // console.log(key + ":"+ person[key])
+            console.log(` ${key} : ${person[key]}`)
+        }
+    </script>
+</body>
+</html>

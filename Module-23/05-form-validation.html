@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form onsubmit="return validateForm()">
+        <div>
+            Username: <input type="text" name="username" id="username" />
+            <p id="usernameError" style="color: red;"></p>
+        </div>
+        <div>
+            Password: <input type="password" name="password" id="password" />
+            <p id="passwordError" style="color: red;"></p>
+        </div>
+        <div>
+            <input type="submit" />
+        </div>
+    </form>
+    <script>
+        function validateForm() {
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+
+            if(username == ""){
+                document.getElementById("usernameError").innerHTML="Username required"
+                return false;
+            }
+             if(password == ""){
+                document.getElementById("passwordError").innerHTML="password required"
+                return false;
+            }
+            if(password.length < 6){
+                document.getElementById("passwordError").innerHTML="password must be at least 6 characters"
+                return false;
+            }
+            alert("Validation successful")
+            return true;
+        }
+    </script>
+</body>
+</html>
