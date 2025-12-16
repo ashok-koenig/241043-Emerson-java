@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css'
+import LifecycleDemo from './LifecycleDemo';
 
 function App() {
 
@@ -26,6 +27,8 @@ function App() {
   
   return (
     <>
+    <h1>Class Component lifecylce demo</h1>
+    <LifecycleDemo/>
       <h1>Working with State Management in React</h1>
       <h3>Current count: {count}</h3>
       <button onClick={increment}>Increment</button>
