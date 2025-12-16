@@ -1,0 +1,13 @@
+.title {
+  color: blue;
+  text-decoration: underline;
+}
+
+.active {
+  color: green;
+  font-weight: bolder;
+}
+
+.inactive {
+  color: gray;
+}
