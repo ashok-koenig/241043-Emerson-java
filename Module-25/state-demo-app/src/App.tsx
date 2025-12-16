@@ -3,16 +3,16 @@ import './App.css'
 
 function App() {
 
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState<number>(0)
 
   const increment = () => {
     setCount( count + 1)
   }
 
-  const [name, setName] = useState("John")
+  const [name, setName] = useState<string>("John")
 
   const updateName = () => {
-    setName("John Smith")
+    setName( name == "John"?"John Smith" : "John")
   }
   // console.log(useState(0))
 
