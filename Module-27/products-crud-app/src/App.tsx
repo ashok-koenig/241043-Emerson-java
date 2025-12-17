@@ -2,7 +2,8 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import ProductList from './components/ProductList'
 import type Product from './models/Product'
-import { getProducts } from './services/productApi'
+import { createProduct, getProducts } from './services/productApi'
+import ProductForm from './components/ProductForm'
 
 function App() {
 
@@ -18,10 +19,17 @@ function App() {
     loadProducts()
   }, [])
 
+  const handleSave = async (product: Product) => {
+    await createProduct(product)
+    loadProducts()
+  }
+
   return (
     <>
       <h1>Product Management App</h1>
       <ProductList products={products}/>
+      <hr />
+      <ProductForm onSave={handleSave} />
     </>
   )
 }
