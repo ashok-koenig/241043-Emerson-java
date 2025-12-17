@@ -12,3 +12,11 @@ export const createProduct= async (newProduct: Product) => {
         body: JSON.stringify(newProduct)
     })
 }
+
+export const updateProduct= async (product: Product) => {
+    await fetch("http://localhost:8080/products/"+product.id, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify(product)
+    })
+}
