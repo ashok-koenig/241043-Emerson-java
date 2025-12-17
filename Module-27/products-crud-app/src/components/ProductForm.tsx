@@ -10,6 +10,9 @@ export default function ProductForm(props: Props) {
     const [name, setName] = useState<string>("")
     const [price, setPrice] = useState<number>(0)
 
+    const [nameError, setNameError] = useState<string | null> (null)
+    const [priceError, setPriceError] = useState<string | null> (null)
+
     useEffect(()=>{
         if(props.selectedProduct){
             setName(props.selectedProduct.name)
@@ -17,6 +20,16 @@ export default function ProductForm(props: Props) {
         }
     }, [props.selectedProduct])
     const handleSubmit = ()=> {
+        setNameError(null)
+        setPriceError(null)
+        if(name.length==0){
+            setNameError("Name is required")
+            return;
+        }
+        if(!Number(price)){
+            setPriceError("Invalid price")
+            return;
+        }
         if(props.selectedProduct){
             props.onSave({...props.selectedProduct, name, price})
         }else{
@@ -31,10 +44,12 @@ export default function ProductForm(props: Props) {
         <div>
             Product Name: 
             <input onChange={(e)=> setName(e.target.value)} value={name} />
+            <p style={{color: "red"}}>{nameError}</p>
         </div>
         <div>
             Product Price: 
             <input onChange={(e)=> setPrice(Number(e.target.value))} value={price} />
+            <p style={{color: "red"}}>{priceError}</p>
         </div>
         <button onClick={handleSubmit}>
             {props.selectedProduct ? "Update product": "Add Product"}
