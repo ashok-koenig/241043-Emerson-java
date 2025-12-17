@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import './App.css'
 import ProductList from './components/ProductList'
 import type Product from './models/Product'
-import { createProduct, getProducts, updateProduct } from './services/productApi'
+import { createProduct, deleteProduct, getProducts, updateProduct } from './services/productApi'
 import ProductForm from './components/ProductForm'
 
 function App() {
@@ -30,10 +30,20 @@ function App() {
     loadProducts()
   }
 
+  const handleDelete = async (id: string) => {
+    const result = confirm("Are you sure, do you want to delete the product?")
+    if(result){
+      await deleteProduct(id)
+      loadProducts()
+    }
+  }
+
   return (
     <>
       <h1>Product Management App</h1>
-      <ProductList products={products} onEdit={setSelectedProduct}/>
+      <ProductList products={products} 
+                  onEdit={setSelectedProduct}
+                  onDelete={handleDelete}/>
       <hr />
       <ProductForm onSave={handleSave} selectedProduct= {selectedProduct}/>
     </>

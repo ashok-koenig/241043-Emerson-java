@@ -2,7 +2,8 @@ import type Product from "../models/Product"
 
 interface Props {
     products: Product[];
-    onEdit: (product: Product)=> void
+    onEdit: (product: Product)=> void;
+    onDelete: (id: string) => void
 }
 
 export default function ProductList(props: Props) {
@@ -23,6 +24,7 @@ export default function ProductList(props: Props) {
                     <td>{product.price}</td>
                     <td>
                         <button onClick={()=> props.onEdit(product)}>Edit</button>
+                        <button onClick={()=> props.onDelete(product.id!)}>Delete</button>
                     </td>
                 </tr>))
             }

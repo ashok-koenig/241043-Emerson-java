@@ -20,3 +20,9 @@ export const updateProduct= async (product: Product) => {
         body: JSON.stringify(product)
     })
 }
+
+export const deleteProduct= async (id: string) => {
+    await fetch("http://localhost:8080/products/"+id, {
+        method: "DELETE"
+    })
+}
