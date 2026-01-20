@@ -5,6 +5,7 @@ class PriorityThread extends Thread {
 
     @Override
     public void run() {
+        // Thread task should be with run methods
         System.out.println(getName() +" Priority: "+ getPriority());
     }
 }
