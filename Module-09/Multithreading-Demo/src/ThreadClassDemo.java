@@ -1,6 +1,6 @@
 class MyThreadA extends Thread {
     public void run(){
-        System.out.println("Thread A Task is running...");
+        System.out.println("Thread A Task is running..." + getName());
     }
 }
 
