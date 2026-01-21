@@ -2,9 +2,9 @@ import java.sql.*;
 
 public class DisplayEmployee {
     public static void main(String[] args) {
-        String url = "jdbc:mysql://localhost:3306/company";
-        String username = "root";
-        String password = "root";
+        String url = "jdbc:postgresql://localhost:5432/company";
+        String username = "postgres";
+        String password = "postgres";
         try{
             // Establish connection with database
             Connection conn = DriverManager.getConnection(url, username, password);
