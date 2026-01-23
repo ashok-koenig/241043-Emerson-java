@@ -26,6 +26,17 @@ public class SaveServlet extends HttpServlet {
         }catch (Exception e){
             throw new RuntimeException(e);
         }
-        resp.getWriter().println("Employee saved successfully");
+        resp.setContentType("text/html");
+        resp.getWriter().println("""
+                <html>
+                <head>
+                    <title>Employee saved successfully</title>
+                </head>
+                <body>
+                    <h1>Employee saved successfully</h1>
+                    <a href="list">View Employee list</a>
+                </body>
+                </html>
+                """);
     }
 }

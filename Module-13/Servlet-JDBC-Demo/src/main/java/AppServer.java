@@ -11,6 +11,7 @@ public class AppServer {
         context.setContextPath("/");
         context.addServlet(RegisterServlet.class, "/register");
         context.addServlet(SaveServlet.class, "/save");
+        context.addServlet(ListServlet.class, "/list");
 
         server.setHandler(context);
 
