@@ -1,3 +1,4 @@
+import jakarta.servlet.ServletRegistration;
 import org.eclipse.jetty.ee11.servlet.ServletContextHandler;
 import org.eclipse.jetty.server.Server;
 
@@ -9,6 +10,15 @@ public class AppServer {
 
         context.setContextPath("/");
         context.addServlet(LifecycleServlet.class, "/lifecycle");
+
+        // Register Servlet
+        ServletRegistration.Dynamic registration =
+                context.addServlet(ConfigServletDemo.class, "/config")
+                                .getRegistration();
+
+        // Add initial parameters / values
+        registration.setInitParameter("appName", "Demo Application");
+        registration.setInitParameter("appVersion", "1.0.0");
 
         server.setHandler(context);
 
