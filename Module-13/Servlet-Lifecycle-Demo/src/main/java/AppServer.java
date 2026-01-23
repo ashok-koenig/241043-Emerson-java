@@ -10,6 +10,7 @@ public class AppServer {
 
         context.setContextPath("/");
         context.addServlet(LifecycleServlet.class, "/lifecycle");
+        context.addServlet(ServletContextDemo.class, "/context");
 
         // Register Servlet
         ServletRegistration.Dynamic registration =
