@@ -15,6 +15,7 @@ public class AppServer {
 
         // Register Filter for all URLS
         context.addFilter(LoggingFilter.class, "/*",null);
+        context.addFilter(TimingFilter.class, "/*", null);
 
         server.setHandler(context);
         server.start();
