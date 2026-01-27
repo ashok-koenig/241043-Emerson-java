@@ -1,7 +1,9 @@
+import filter.AuthFilter;
 import org.eclipse.jetty.ee11.servlet.ServletContextHandler;
 import org.eclipse.jetty.server.Server;
 import servlet.DashboardServlet;
 import servlet.LoginServlet;
+import servlet.LogoutServlet;
 
 public class AppServer {
     public static void main(String[] args) throws Exception {
@@ -13,6 +15,9 @@ public class AppServer {
 
         context.addServlet(LoginServlet.class, "/login");
         context.addServlet(DashboardServlet.class, "/dashboard");
+        context.addServlet(LogoutServlet.class, "/logout");
+
+        context.addFilter(AuthFilter.class, "/dashboard", null);
 
         server.setHandler(context);
         server.start();

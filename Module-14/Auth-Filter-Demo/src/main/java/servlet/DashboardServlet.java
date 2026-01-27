@@ -22,6 +22,7 @@ public class DashboardServlet extends HttpServlet {
                     <body>
                         <h2>Dashboard</h2>
                         <p>Welcome, %s</p>
+                        <a href="logout">Logout</a>
                     </body>
                 </html>
                 """.formatted(user));
