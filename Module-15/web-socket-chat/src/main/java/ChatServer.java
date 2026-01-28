@@ -10,6 +10,8 @@ public class ChatServer {
 
         context.setContextPath("/");
 
+        context.addServlet(ChatServlet.class, "/client");
+
         JakartaWebSocketServletContainerInitializer.configure(context,
                 (servletContext, serverContainer) -> {
             serverContainer.addEndpoint(ChatEndpoint.class);
