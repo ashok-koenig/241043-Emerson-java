@@ -1,0 +1,1 @@
+SELECT name AS emp_name FROM employees;
