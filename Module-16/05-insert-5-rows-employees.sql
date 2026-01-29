@@ -1,6 +1,6 @@
 INSERT INTO employees(name, salary, department) 
-VALUES('John', 30000, 'HR'),
-('SMith', 35000, 'IT'),
-('Bob', 25000, 'HR'),
-('Peter', 10000, 'ADMIN'),
-('Ana', 20000, 'IT');
+VALUES('John Smith', 30000, 'HR'),
+('Ana SMith', 35000, 'IT'),
+('Bobe', 25000, 'HR'),
+('John Peter', 10000, 'ADMIN'),
+('Juli', 20000, 'IT');
